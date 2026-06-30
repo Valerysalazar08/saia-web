@@ -14,7 +14,12 @@ import { FaChevronDown } from 'react-icons/fa';
 import logo from '../../assets/images/logoblanco.svg';
 import Boton from '../atoms/Boton';
 
-const helpLinks = ['Documentación', 'Tutoriales', 'Centro de ayuda', 'Contacto'];
+const helpLinks = [
+  { label: 'Centro de ayuda', to: '/ayuda' },
+  { label: 'Documentación', to: '/ayuda' },
+  { label: 'Tutoriales', to: '/ayuda' },
+  { label: 'Contacto', to: '/ayuda' },
+];
 
 export default function Navbar() {
   const { pathname } = useLocation();
@@ -80,8 +85,8 @@ export default function Navbar() {
             >
               {helpLinks.map((item) => (
                 <MenuItem
-                  key={item}
-                  value={item}
+                  key={item.label}
+                  value={item.label}
                   fontSize="sm"
                   color="#0A1628"
                   fontWeight="500"
@@ -89,8 +94,9 @@ export default function Navbar() {
                   borderRadius="lg"
                   mx={1}
                   px={4}
+                  asChild
                 >
-                  {item}
+                  <RouterLink to={item.to}>{item.label}</RouterLink>
                 </MenuItem>
               ))}
             </MenuContent>
