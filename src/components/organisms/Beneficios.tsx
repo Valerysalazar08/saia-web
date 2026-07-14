@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, VStack, Text } from '@chakra-ui/react';
 import { FaClock, FaShieldAlt, FaChartLine, FaUsers } from 'react-icons/fa';
-import CardBeneficio from '../molecules/CardBeneficio';
-import TextoGradiente from '../atoms/TextoGradiente';
+import CardBeneficio from '@/components/molecules/CardBeneficio';
+import TextoGradiente from '@/components/atoms/TextoGradiente';
 
 const beneficios = [
   {

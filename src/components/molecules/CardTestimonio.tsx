@@ -1,5 +1,5 @@
 import { Box, Flex, Text, VStack } from '@chakra-ui/react';
-import comillas from '../../assets/images/comillas.svg';
+import comillas from '@/assets/icons/comillas.svg';
 
 interface CardTestimonioProps {
   quote: string;

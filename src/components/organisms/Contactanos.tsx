@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, Text, VStack, Grid } from '@chakra-ui/react';
-import Boton from '../atoms/Boton';
-import TextoGradiente from '../atoms/TextoGradiente';
-import CampoFormulario from '../molecules/CampoFormulario';
+import Boton from '@/components/atoms/Boton';
+import TextoGradiente from '@/components/atoms/TextoGradiente';
+import CampoFormulario from '@/components/molecules/CampoFormulario';
 
 export default function Contactanos() {
   return (

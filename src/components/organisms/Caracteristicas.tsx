@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Text, VStack, HStack } from '@chakra-ui/react';
-import TextoGradiente from '../atoms/TextoGradiente';
-import ilustracionQR from '../../assets/images/ilustracionQR.svg';
+import TextoGradiente from '@/components/atoms/TextoGradiente';
+import ilustracionQR from '@/assets/images/ilustracionQR.svg';
 
 const chips = ['Tecnología QR', 'Validación rapida', 'Soporte 24/7'];
 

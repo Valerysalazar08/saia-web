@@ -1,5 +1,5 @@
 import { Box, Flex, HStack, VStack, Text, Link, Image } from '@chakra-ui/react';
-import logo from '../../assets/images/logogradiente.svg';
+import logo from '@/assets/icons/logogradiente.svg';
 
 const footerLinks = {
   'Sobre nosotros': ['Misión', 'Equipo', 'Blog', 'Terminos'],

@@ -1,5 +1,6 @@
 import { Box, Flex, Heading, Text, Image } from '@chakra-ui/react';
-import tecnologiahumana from '../../../assets/images/tecnologiahumana.svg';
+import tecnologiahumana from '@/assets/images/tecnologiahumana.svg';
+
 
 export default function HeroNosotros() {
   return (

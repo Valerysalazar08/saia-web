@@ -1,6 +1,6 @@
 import { Box, Heading, VStack } from '@chakra-ui/react';
-import CardTestimonio from '../molecules/CardTestimonio';
-import TextoGradiente from '../atoms/TextoGradiente';
+import CardTestimonio from '@/components/molecules/CardTestimonio';
+import TextoGradiente from '@/components/atoms/TextoGradiente';
 
 const testimonios = [
   {

@@ -15,8 +15,8 @@ import {
   DialogBackdrop,
   DialogPositioner,
 } from '@chakra-ui/react';
-import Boton from '../../atoms/Boton';
-import tratamdatos from '../../../assets/images/tratamdatos.svg';
+import Boton from '@/components/atoms/Boton';
+import tratamdatos from '@/assets/images/tratamdatos.svg';
 
 function Seccion({ titulo, children }: { titulo: string; children: React.ReactNode }) {
   return (

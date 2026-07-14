@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Box } from '@chakra-ui/react';
-import botonScroll from '../../assets/images/botonscroll.svg';
+import botonScroll from '@/assets/icons/botonscroll.svg';
 
 export default function BackToTop() {
   const [visible, setVisible] = useState(false);

@@ -1,12 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
 import MainLayout from '../components/templates/MainLayout';
-import ProtectedRoute from './ProtectedRoute';
+import AuthLayout from '../components/templates/AuthLayout';
 import LandingPage from '../pages/LandingPage';
 import Nosotros from '../pages/Nosotros';
-// import AyudaSoporte from '../pages/AyudaSoporte';
-import AyudaSoporte from '@/pages/AyudaSoporte';
+import AyudaSoporte from '../pages/AyudaSoporte';
+// import AyudaSoporte from '@/pages/AyudaSoporte';
 import Login from '../pages/Login';
-import Dashboard from '../pages/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -17,14 +16,9 @@ const router = createBrowserRouter([
       { path: '/ayuda', element: <AyudaSoporte /> },
     ],
   },
-  {
-    path: '/login',
-    element: <Login />,
-  },
-  {
-    element: <ProtectedRoute allowedRoles={['admin']} />,
+  {  element: <AuthLayout />,
     children: [
-      { path: '/dashboard', element: <Dashboard /> },
+      { path: '/login', element: <Login /> },
     ],
   },
 ]);

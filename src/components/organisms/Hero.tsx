@@ -1,6 +1,6 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
-import Boton from '../atoms/Boton';
-import imghero from '../../assets/images/imghero.svg';
+import Boton from '@/components/atoms/Boton';
+import imghero from '@/assets/images/imghero.svg';
 
 interface HeroProps {
   bgImage?: string;

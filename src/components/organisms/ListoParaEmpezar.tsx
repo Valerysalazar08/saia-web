@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Text, VStack } from '@chakra-ui/react';
-import Boton from '../atoms/Boton';
+import Boton from '@/components/atoms/Boton';
 
 export default function ListoParaEmpezar() {
   return (

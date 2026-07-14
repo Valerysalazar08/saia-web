@@ -11,8 +11,8 @@ import {
 } from '@chakra-ui/react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa';
-import logo from '../../assets/images/logoblanco.svg';
-import Boton from '../atoms/Boton';
+import logo from '@/assets/icons/logoblanco.svg';
+import Boton from '@/components/atoms/Boton';
 
 const helpLinks = [
   { label: 'Centro de ayuda', to: '/ayuda' },
