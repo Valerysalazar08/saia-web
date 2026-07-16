@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import Navbar from '../organisms/Navbar';
-import Footer from '../organisms/Footer';
-import BackToTop from '../atoms/BackToTop';
+import Navbar from '@/components/organisms/Navbar';
+import Footer from '@/components/organisms/Footer';
+import BackToTop from '@/components/atoms/BackToTop';
 
 /**
  * MainLayout

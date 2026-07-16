@@ -121,12 +121,16 @@ export default function Navbar() {
 
         {/* Action buttons */}
         <HStack gap={3}>
-          <Boton variante="outline" size="sm" px={5}>
-            Ingresar
-          </Boton>
-          <Boton variante="blanco" size="sm" px={5}>
-            Registrarme →
-          </Boton>
+          <RouterLink to="/login">
+            <Boton variante="outline" size="sm" px={5}>
+              Ingresar
+            </Boton>
+          </RouterLink>
+          <RouterLink to="/registro">
+            <Boton variante="blanco" size="sm" px={5}>
+              Registrarme →
+            </Boton>
+          </RouterLink>
         </HStack>
       </Flex>
     </Box>
