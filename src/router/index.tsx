@@ -6,6 +6,9 @@ import Nosotros from '@/pages/Nosotros';
 import AyudaSoporte from '@/pages/AyudaSoporte';
 import Login from '@/pages/Login';
 import Registro from '@/pages/Registro';
+import RecuperarContrasena from '@/pages/RecuperarContrasena';
+import VerificarCodigo from '@/pages/VerificarCodigo';
+import NuevaContrasena from '@/pages/NuevaContrasena';
 import NotFound from '@/pages/NotFound';
 
 const router = createBrowserRouter([
@@ -22,6 +25,9 @@ const router = createBrowserRouter([
     children: [
       { path: '/login', element: <Login /> },
       { path: '/registro', element: <Registro /> },
+      { path: '/recuperar-contrasena', element: <RecuperarContrasena /> },
+      { path: '/recuperar-contrasena/verificar', element: <VerificarCodigo /> },
+      { path: '/recuperar-contrasena/nueva', element: <NuevaContrasena /> },
     ],
   },
   {
