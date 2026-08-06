@@ -49,7 +49,7 @@ const categorias = [
 
 export default function Categorias() {
   return (
-    <Box as="section" bg="white" py={{ base: 14, md: 20 }}>
+    <Box as="section" id="tutoriales" bg="white" py={{ base: 14, md: 20 }}>
       <VStack maxW="1200px" mx="auto" px={{ base: 6, md: 10 }} gap={10}>
         <SeccionHeader
           etiqueta="Selecciona la categoría que mejor se ajuste a tu consulta"

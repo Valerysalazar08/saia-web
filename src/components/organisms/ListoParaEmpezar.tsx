@@ -1,4 +1,5 @@
-import { Box, Flex, Heading, Text, VStack } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, VStack, Tooltip } from '@chakra-ui/react';
+import { FaMobileAlt } from 'react-icons/fa';
 import Boton from '@/components/atoms/Boton';
 
 export default function ListoParaEmpezar() {
@@ -17,7 +18,7 @@ export default function ListoParaEmpezar() {
           boxShadow="0 2px 20px rgba(0,0,0,0.06)"
           overflow="hidden"
         >
-          {/* Barra vertical gradiente izquierda */}
+          {/* Barra vertical gradiente */}
           <Box
             w="15px"
             alignSelf="stretch"
@@ -36,20 +37,58 @@ export default function ListoParaEmpezar() {
             pl={{ base: 6, md: 4 }}
             pr={{ base: 6, md: 0 }}
           >
-            <Heading as="h2" fontSize={{ base: 'xl', md: '2xl' }} fontWeight="900" color="#0A1628">
+            <Heading
+              as="h2"
+              fontSize={{ base: 'lg', md: 'xl' }}
+              fontWeight="900"
+              color="#0A1628"
+            >
               ¿Listo para comenzar?
             </Heading>
-            <Text fontSize="sm" fontWeight="700" color="#0A1628" lineHeight="tall" maxW="480px">
-              Únete al nuevo sistema de ingreso que utilizan los aprendices
-              para un ingreso más inteligente y seguro. El proceso de
-              registro toma menos de 2 minutos.
+            <Text
+              fontSize="sm"
+              fontWeight="400"
+              color="gray.600"
+              lineHeight="tall"
+              maxW="480px"
+            >
+              Descarga la app SAIA y gestiona tu ingreso de forma inteligente y
+              segura. Disponible próximamente en Google Play y App Store.
             </Text>
           </VStack>
 
           <Box pr={{ base: 6, md: 8 }} pb={{ base: 8, md: 0 }}>
-            <Boton variante="gradiente" size="lg" px={8}>
-              Registrarme →
-            </Boton>
+            <Tooltip.Root>
+              <Tooltip.Trigger asChild>
+                <Box>
+                  <Boton
+                    variante="gradiente"
+                    size="md"
+                    px={6}
+                    opacity={0.5}
+                    cursor="not-allowed"
+                    pointerEvents="none"
+                  >
+                    <Flex align="center" gap={2}>
+                      <FaMobileAlt size={15} />
+                      Descargar App
+                    </Flex>
+                  </Boton>
+                </Box>
+              </Tooltip.Trigger>
+              <Tooltip.Positioner>
+                <Tooltip.Content
+                  bg="#0A1628"
+                  color="white"
+                  fontSize="xs"
+                  borderRadius="lg"
+                  px={3}
+                  py={2}
+                >
+                  Próximamente disponible
+                </Tooltip.Content>
+              </Tooltip.Positioner>
+            </Tooltip.Root>
           </Box>
         </Flex>
       </Box>

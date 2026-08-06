@@ -32,7 +32,7 @@ const valores = [
 
 export default function Valores() {
   return (
-    <Box as="section" bg="white" py={{ base: 14, md: 20 }}>
+    <Box as="section" id="valores" bg="white" py={{ base: 14, md: 20 }}>
       <VStack maxW="1200px" mx="auto" px={{ base: 6, md: 10 }} gap={12}>
         <SeccionHeader
           titulo="Nuestros Valores Fundamentales"

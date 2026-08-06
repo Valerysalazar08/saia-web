@@ -1,48 +1,9 @@
-import {
-  Box,
-  Flex,
-  Grid,
-  VStack,
-  Text,
-  AccordionRoot,
-  AccordionItem,
-  AccordionItemTrigger,
-  AccordionItemContent,
-} from '@chakra-ui/react';
+import { useState } from 'react';
+import { Box, Flex, Grid, VStack, Text, AccordionRoot, AccordionItem, AccordionItemTrigger, AccordionItemContent } from '@chakra-ui/react';
 import SeccionHeader from '@/components/molecules/SeccionHeader';
+import { faqs } from '@/data/ayuda';
 
-const faqs = [
-  {
-    pregunta: '¿Cómo recupero mi código QR?',
-    respuesta:
-      'Ingresa a la app SAIA con tu cuenta, ve a "Mi perfil" y selecciona "Regenerar QR". Si no tienes acceso a la app, contacta a soporte.',
-  },
-  {
-    pregunta: '¿Cómo actualizo mis datos personales?',
-    respuesta:
-      'Desde la app ve a Configuración > Datos personales. Los cambios deben ser aprobados por un administrador.',
-  },
-  {
-    pregunta: '¿Qué hago si el sistema no valida mi ingreso?',
-    respuesta:
-      'Asegúrate de tener buena iluminación y que el QR esté limpio en pantalla. Si persiste, informa al personal de portería.',
-  },
-  {
-    pregunta: '¿Cuánto tiempo tarda la validación?',
-    respuesta:
-      'La validación es instantánea, en menos de 2 segundos. Si tarda más, puede ser un problema de red.',
-  },
-  {
-    pregunta: '¿Puedo ingresar sin conexión a internet?',
-    respuesta:
-      'Sí, el QR funciona de manera offline por un período limitado. Asegúrate de sincronizar la app regularmente.',
-  },
-  {
-    pregunta: '¿A quién contacto si necesito más ayuda?',
-    respuesta:
-      'Puedes escribirnos al correo soporte@saia.edu.co o contactarnos por WhatsApp al +57 312 345 6789.',
-  },
-];
+const VISIBLE_POR_DEFECTO = 6;
 
 function GrupoFAQ({ items, prefijo }: { items: typeof faqs; prefijo: string }) {
   return (
@@ -71,6 +32,11 @@ function GrupoFAQ({ items, prefijo }: { items: typeof faqs; prefijo: string }) {
 }
 
 export default function FAQ() {
+  const [verTodas, setVerTodas] = useState(false);
+
+  const visibles = verTodas ? faqs : faqs.slice(0, VISIBLE_POR_DEFECTO);
+  const mitad = Math.ceil(visibles.length / 2);
+
   return (
     <Box as="section" bg="#f8fffe" py={{ base: 14, md: 20 }}>
       <VStack maxW="1200px" mx="auto" px={{ base: 6, md: 10 }} gap={8}>
@@ -87,14 +53,29 @@ export default function FAQ() {
             _hover={{ opacity: 0.8 }}
             display={{ base: 'none', md: 'block' }}
             pb={1}
+            onClick={() => setVerTodas((v) => !v)}
           >
-            Ver todas las preguntas
+            {verTodas ? 'Ver menos preguntas ↑' : 'Ver todas las preguntas →'}
           </Text>
         </Flex>
+
         <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={4} w="full">
-          <GrupoFAQ items={faqs.slice(0, 3)} prefijo="a" />
-          <GrupoFAQ items={faqs.slice(3)} prefijo="b" />
+          <GrupoFAQ items={visibles.slice(0, mitad)} prefijo="a" />
+          <GrupoFAQ items={visibles.slice(mitad)} prefijo="b" />
         </Grid>
+
+        {/* Botón móvil */}
+        <Text
+          fontSize="xs"
+          fontWeight="600"
+          color="#33BEDC"
+          cursor="pointer"
+          _hover={{ opacity: 0.8 }}
+          display={{ base: 'block', md: 'none' }}
+          onClick={() => setVerTodas((v) => !v)}
+        >
+          {verTodas ? 'Ver menos ↑' : 'Ver todas las preguntas →'}
+        </Text>
       </VStack>
     </Box>
   );

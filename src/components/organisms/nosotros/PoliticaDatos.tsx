@@ -43,7 +43,7 @@ export default function PoliticaDatos() {
   return (
     <>
       {/* Sección */}
-      <Box as="section" position="relative" overflow="hidden" minH={{ base: '340px', md: '400px' }}>
+      <Box as="section" id="politica" position="relative" overflow="hidden" minH={{ base: '340px', md: '400px' }}>
         {/* Imagen de fondo */}
         <Box
           position="absolute"

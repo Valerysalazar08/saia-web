@@ -20,7 +20,7 @@ const propositos = [
 
 export default function Propositos() {
   return (
-    <Box as="section" bg="#f8fffe" py={{ base: 14, md: 20 }}>
+    <Box as="section" id="propositos" bg="#f8fffe" py={{ base: 14, md: 20 }}>
       <VStack maxW="1200px" mx="auto" px={{ base: 6, md: 10 }} gap={12}>
         <SeccionHeader titulo="Nuestros propósitos" centrado />
         <Flex direction={{ base: 'column', md: 'row' }} gap={6} w="full">

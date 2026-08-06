@@ -1,6 +1,12 @@
-import { Box, Heading, Text } from '@chakra-ui/react';
-import Boton from '@/components/atoms/Boton';
+import { Box, Flex, Heading, Text, HStack } from '@chakra-ui/react';
+import { FaQrcode, FaBolt, FaShieldAlt } from 'react-icons/fa';
 import imghero from '@/assets/images/imghero.svg';
+
+const chips = [
+  { icono: <FaQrcode size={13} />, label: 'QR Digital' },
+  { icono: <FaBolt size={13} />, label: 'Acceso instantáneo' },
+  { icono: <FaShieldAlt size={13} />, label: 'Seguridad institucional' },
+];
 
 interface HeroProps {
   bgImage?: string;
@@ -21,7 +27,8 @@ export default function Hero({ bgImage }: HeroProps) {
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
     >
-      <Box position="absolute" inset={0} bg="rgba(0, 0, 0, 0.55)" />
+      {/* Overlay */}
+      <Box position="absolute" inset={0} bg="rgba(0,0,0,0.52)" />
 
       <Box
         position="relative"
@@ -35,39 +42,59 @@ export default function Hero({ bgImage }: HeroProps) {
         justifyContent="center"
         py={16}
       >
-        <Box maxW="620px">
+        <Box maxW="600px">
+          {/* Título */}
           <Heading
             as="h1"
-            fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
+            fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}
             fontWeight="900"
             color="white"
-            mb={6}
-            lineHeight="shorter"
+            mb={5}
+            lineHeight={1.15}
             textTransform="uppercase"
             letterSpacing="tight"
           >
-            BIENVENIDO
+            Bienvenido a SAIA
           </Heading>
 
+          {/* Descripción */}
           <Text
-            color="white"
-            fontSize={{ base: 'sm', md: 'md' }}
-            fontWeight="700"
-            lineHeight="tall"
-            mb={10}
+            color="whiteAlpha.900"
+            fontSize={{ base: 'sm', md: 'sm' }}
+            fontWeight="400"
+            lineHeight="1.8"
+            mb={8}
+            maxW="520px"
           >
-            Bienvenido al Sistema Automatizado de Ingreso para Aprendices, una
-            solución tecnológica diseñada para modernizar y optimizar el control
-            de acceso en instituciones educativas. Nuestro sistema permite
-            gestionar de manera ágil, segura y eficiente el ingreso y salida de
-            aprendices mediante el uso de códigos QR digitales, reduciendo
-            tiempos de espera y mejorando la experiencia tanto de los usuarios
-            como del personal de vigilancia.
+            Sistema Automatizado de Ingreso para Aprendices — una solución
+            tecnológica diseñada para modernizar el control de acceso en
+            instituciones educativas mediante códigos QR digitales, reduciendo
+            tiempos de espera y mejorando la experiencia de toda la comunidad.
           </Text>
 
-          <Boton variante="gradiente" size="lg" px={8}>
-            Registrarme →
-          </Boton>
+          {/* Chips */}
+          <HStack gap={3} flexWrap="wrap">
+            {chips.map((chip) => (
+              <Flex
+                key={chip.label}
+                align="center"
+                gap={2}
+                px={4}
+                py={2}
+                borderRadius="full"
+                bg="rgba(255,255,255,0.12)"
+                border="1px solid rgba(255,255,255,0.25)"
+                backdropFilter="blur(8px)"
+                color="white"
+                fontSize="xs"
+                fontWeight="600"
+                letterSpacing="wide"
+              >
+                <Box color="#2EEDAD">{chip.icono}</Box>
+                {chip.label}
+              </Flex>
+            ))}
+          </HStack>
         </Box>
       </Box>
     </Box>

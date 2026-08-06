@@ -38,7 +38,7 @@ export default function Features({ illustration }: FeaturesProps) {
           <Text
             color="#0A1628"
             fontSize={{ base: 'sm', md: 'md' }}
-            fontWeight="700"
+            // fontWeight="700"
             lineHeight="tall"
           >
             En SAIA, entendemos que la seguridad y el tiempo son los activos mas
